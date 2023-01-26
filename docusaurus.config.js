@@ -9,7 +9,7 @@ const config = {
   title: "GenoPipe",
   tagline: "Run a background check on your NGS data",
   url: "https://CEGRcode.github.io",
-  baseUrl: "/GenoPipe/",
+  baseUrl: "/GenoPipe-docs/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/genopipe.ico",
