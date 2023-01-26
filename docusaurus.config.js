@@ -8,7 +8,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "GenoPipe",
   tagline: "Run a background check on your NGS data",
-  url: "https://github.com/CEGRcode",
+  url: "https://CEGRcode.github.io",
   baseUrl: "/GenoPipe/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
