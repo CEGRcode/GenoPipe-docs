@@ -17,7 +17,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "CEGRcode", // Usually your GitHub org/user name.
-  projectName: "GenoPipe", // Usually your repo name.
+  projectName: "GenoPipe-docs", // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -36,13 +36,13 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/CEGRcode/GenoPipe",
+          editUrl: "https://github.com/CEGRcode/GenoPipe-docs",
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/CEGRcode/GenoPipe",
+          editUrl: "https://github.com/CEGRcode/GenoPipe-docs",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
