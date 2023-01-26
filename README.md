@@ -1,6 +1,6 @@
 # GenoPipe Documentation Website
 
-View website at https://pughlab.mbg.cornell.edu/GenoPipe
+View website at https://pughlab.mbg.cornell.edu/GenoPipe-docs
 
 ## Migration from `CEGRcode/GenoPipe` (January 20, 2023)
 This website includes all the website-building files for the documentation of [GenoPipe](https://github.com/CEGRcode/GenoPipe). These were originally hosted within the same repository until they were split from the original `CEGRcode/GenoPipe` repository as a standalone repository. These files were migrated from the [0feb1b6](https://github.com/CEGRcode/GenoPipe/commit/0feb1b6d30fb643bea11a1e28e0aa165fc6014cb) commit.
