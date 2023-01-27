@@ -131,7 +131,7 @@ const config = {
             items: [
               {
                 label: "ScriptManager",
-                href: "https://github.com/CEGRcode/scriptmanager",
+                href: "https://github.com/CEGRcode/scriptmanager-docs",
               },
               {
                 label: "PEGR",
@@ -143,7 +143,7 @@ const config = {
               },
               {
                 label: "GenoPipe",
-                href: "https://github.com/CEGRcode/GenoPipe",
+                href: "https://github.com/CEGRcode/GenoPipe-docs",
               },
             ],
           },
