@@ -106,7 +106,13 @@ In reading these reports, look for the VCF file with the largest value as the be
 
 For this report, due to the dramatically high value of the SK-N-SH score relative to the scores of the other strains, this sample would be confidently classified as sourced from the SK-N-SH cell line.
 
-<!-- ### Example 3  (Inf)-->
+### Example 3
+Sometimes in reports you may see an 'Inf' score (should be extremely rare). In these cases, the background of the dataset was not sufficiently sampled and no reads sampled included deviations from the reference genome. You may try re-running StrainID with a different seed.
+```
+	XXXXX.bam
+strain1.vcf	-5.400766523407889
+strain2.vcf	Inf
+```
 
 
 ## FAQs

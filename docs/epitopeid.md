@@ -40,15 +40,28 @@ Alternatively try:<br/>
 ### Using published data downloaded from SRA
 If you obtained data from SRA using sra-tools, the FASTQ files may have the read id printed in the FASTQ header like this:
 ```
-
+@SRR518875.1.1 HWUSI-EAS1634_0079_FC:4:8:3267:1026 length=36
+AAATCTTCTGTCTTTTGCTTTTGGACTCCATTCGTC
++SRR518875.1.1 HWUSI-EAS1634_0079_FC:4:8:3267:1026 length=36
+????????????????????????????????????
 ```
+
+...when EpitopeID requires the FASTQ quality score header not include the read id.
 
 Currently EpitopeID does not support this format so you will need to reformat the FASTQ files. Below is an example of how to reformat each R1/R2 file for EpitopeID using `SRR10054430` as an example:
 ```
 # Reformat quality score header and strip SRA read id to use raw read id to original sequencer-determined id
 # unzip | reformat with sed | zip > output
-gunzip -dc SRR10054430_1.fastq.gz | sed 's/+.*/+/g; s/\@SRR[0-9]\{7\}\.[0-9]\+ /\@/g' | gzip -c > SRR10054430_R1.fastq.gz
-gunzip -dc SRR10054430_2.fastq.gz | sed 's/+.*/+/g; s/\@SRR[0-9]\{7\}\.[0-9]\+ /\@/g' | gzip -c > SRR10054430_R2.fastq.gz
+gunzip -dc SRR518875_1.fastq.gz | sed 's/+.*/+/g; s/\@SRR[0-9]\{7\}\.[0-9]\+ /\@/g' | gzip -c > SRR518875_R1.fastq.gz
+gunzip -dc SRR518875_2.fastq.gz | sed 's/+.*/+/g; s/\@SRR[0-9]\{7\}\.[0-9]\+ /\@/g' | gzip -c > SRR518875_R2.fastq.gz
+```
+
+...and your FASTQ files should look something like this:
+```
+@SRR518875.1.1 HWUSI-EAS1634_0079_FC:4:8:3267:1026 length=36
+AAATCTTCTGTCTTTTGCTTTTGGACTCCATTCGTC
++
+????????????????????????????????????
 ```
 
 ## Reference Files (`-d`)
@@ -247,7 +260,10 @@ cd $EPITOPEID/utility_scripts
 
 ## Output Report (`-o`)
 
-The output report is saved to the user-provided output directory in a file named based on the input FASTQ files (`/path/to/output/XXXXX_R1-ID.tab`). Below is a sample report based on the results from running EpitopeID on the ENCODE [ENCFF415CJF][ENCFF415CJF] sample.
+The output report is saved to the user-provided output directory in a file named based on the input FASTQ files (`/path/to/output/XXXXX_R1-ID.tab`).
+
+### Example 1
+Below is a sample report based on the results from running EpitopeID on the [ENCFF415CJF][ENCFF415CJF] sample from ENCODE.
 
 ```
 EpitopeID	EpitopeCount
@@ -261,7 +277,6 @@ The first part of the report shows which epitopes in `Tag_DB` were identified in
 
 The second part of the report shows which epitopes localized to which regions/tiles of the genome significantly (sorted by pvalue if multiple hits). The columns specify the coordinate interval (**GeneID**), which epitope maps to this locus (**EpitopeID**), if this occurs on the N or C-terminus (**EpitopeLocation**), the number of reads mapping to this tile (**EpitopeCount**), and the poisson-calculated associated p-value to indicate confidence of the site (**pVal**).
 
-
 In this report there were 435 reads that mapped to the LAP-tag epitope. The high read count supports "the epitope was successfully integrated into the sample.""
 
 In this report there were 9 read pairs that spanned both the LAP-tag and the NR4A1 gene(at genomic locus chr12:52416616-52453291) toward the sequence encoding the C-terminus. This entry supports that the LAP-tag epitope was integrated at the C-terminus of NF4A1.
@@ -269,31 +284,6 @@ In this report there were 9 read pairs that spanned both the LAP-tag and the NR4
 ## Threading (`-t`)
 
 This optional input is used to specify the number of threads to used for the Bowtie2 alignment commands. Defaults to 1.
-
-
-## Example: Set-up EpitopeID and run on yeast example
-```bash
-git clone www.github/CEGRcode/GenoPipe
-cd GenoPipe/EpitopeID/
-
-# remake the epitope Tags file and index it (if custom sequences are added)
-cd sacCer3_EpiID/FASTA_tag/Tag_DB
-  ## add custom sequences here ##
-bash ../../../utility_scripts/update_TagDB.sh
-mv ALL_TAG.fa* ../
-# download the genome
-cd ../../../utility_scripts/genome_data/
-bash download_sacCer3_Genome.sh
-mv genome.fa ../../sacCer3_EpiID/FASTA_genome/
-# download annotations
-# cd ../annotation_data/
-# bash generate_sacCer3_GenomeAnnotation.sh -g ../../sacCer3_EpiID/FASTA_genome/genome.fa -b 250
-# mv genome_annotation.gff.gz ../../sacCer3_EpiID/annotation/
-cd ../../
-# run EpitopeID on FASTQs in the `sample` directory below
-mkdir ../output
-bash identify_Epitope.sh -i ../samples/ -o ../output/ -d sacCer3_EpiID -t 4
-```
 
 
 ## FAQs

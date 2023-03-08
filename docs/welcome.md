@@ -44,10 +44,6 @@ conda create -n my-genopipe-env -c conda-forge -c bioconda bedtools bowtie2 bwa 
 conda activate my-genopipe-env
 ```
 
-:::note
-The version specification for samtools and openssl conda commands
-:::
-
 ### Download
 
 ```bash
