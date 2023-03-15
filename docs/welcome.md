@@ -83,8 +83,9 @@ General notes about the defaults used for out-of-the-box usage:
     * Software versions and OS you ran the command on
 
 ## Citing Us
-If you use GenoPipe in your work, you can use the BioRxiv publication (Lang et al, 202X).
+If you use GenoPipe in your work, you can use the [BioRxiv publication (Lang et al, 2023)][biorxiv-link].
 
+[biorxiv-link]:https://www.biorxiv.org/content/10.1101/2023.03.14.532660v1
 
 [epitopeid-md]:/docs/epitopeid
 [deletionid-md]:/docs/deletionid
