@@ -1,7 +1,7 @@
 ---
 id: strainid
-title: StrainID
-sidebar_label: StrainID
+title: Usage
+sidebar_label: Usage
 ---
 
 <!-- [strainid-icon]:../static/genopipe-img/strainid-icon.png -->

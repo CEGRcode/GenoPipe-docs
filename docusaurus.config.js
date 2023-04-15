@@ -64,26 +64,8 @@ const config = {
           {
             type: 'doc',
             docId: 'welcome',
-            position: 'left',
-            label: 'General',
-          },
-          {
-            type: 'doc',
-            docId: 'EpitopeID/epitopeid',
-            position: 'left',
-            label: 'EpitopeID',
-          },
-          {
-            type: 'doc',
-            docId: 'DeletionID/deletionid',
-            position: 'left',
-            label: 'DeletionID',
-          },
-          {
-            type: 'doc',
-            docId: 'StrainID/strainid',
-            position: 'left',
-            label: 'StrainID',
+            position: 'right',
+            label: 'Docs',
           },
           {
             href: 'https://github.com/CEGRcode/GenoPipe',

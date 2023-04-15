@@ -1,7 +1,7 @@
 ---
 id: epitopeid
-title: EpitopeID
-sidebar_label: EpitopeID
+title: Usage
+sidebar_label: Usage
 ---
 
 <!-- ![epitopeid-icon](/genopipe-img/epitopeid-icon.png)-->

@@ -1,7 +1,7 @@
 ---
 id: deletionid
-title: DeletionID
-sidebar_label: DeletionID
+title: Usage
+sidebar_label: Usage
 ---
 
 <!-- [deletionid-icon]:../static/genopipe-img/deletionid-icon.png -->
