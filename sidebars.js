@@ -26,6 +26,30 @@ const sidebars = {
       items: ['welcome', 'quick-start'],
     },
   ],
+
+  epitopeidSidebar: [
+    {
+      type: 'category',
+      label: 'EpitopeID',
+      items: ['EpitopeID/epitopeid'],
+    }
+  ],
+
+  deletionidSidebar: [
+    {
+      type: 'category',
+      label: 'DeletionID',
+      items: ['DeletionID/deletionid'],
+    }
+  ],
+
+  strainidSidebar: [
+    {
+      type: 'category',
+      label: 'StrainID',
+      items: ['StrainID/strainid'],
+    }
+  ],
 };
 
 module.exports = sidebars;

@@ -69,19 +69,19 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'epitopeid',
+            docId: 'EpitopeID/epitopeid',
             position: 'left',
             label: 'EpitopeID',
           },
           {
             type: 'doc',
-            docId: 'deletionid',
+            docId: 'DeletionID/deletionid',
             position: 'left',
             label: 'DeletionID',
           },
           {
             type: 'doc',
-            docId: 'strainid',
+            docId: 'StrainID/strainid',
             position: 'left',
             label: 'StrainID',
           },
@@ -104,15 +104,15 @@ const config = {
             items: [
               {
                 label: 'EpitopeID',
-                to: '/docs/epitopeid',
+                to: '/docs/EpitopeID/epitopeid',
               },
               {
                 label: 'DeletionID',
-                to: '/docs/deletionid',
+                to: '/docs/DeletionID/deletionid',
               },
               {
                 label: 'StrainID',
-                to: '/docs/strainid',
+                to: '/docs/StrainID/strainid',
               },
             ],
           },
