@@ -19,27 +19,55 @@ const sidebars = {
   */
 
   // But you can create a sidebar manually
-  tutorialSidebar: [
+  generalSidebar: [
+    'welcome',
+    'quick-start',
+  ],
+  epitopeSidebar: [
+    'EpitopeID/epitopeid',
+    'EpitopeID/input',
     {
       type: 'category',
-      label: 'General',
-      items: ['welcome', 'quick-start'],
+      label: 'Reference Database (-d)',
+      items: [
+        'EpitopeID/db/structure',
+        'EpitopeID/db/pregenerated',
+        'EpitopeID/db/custom-db'
+      ]
     },
+    'EpitopeID/output',
+    'EpitopeID/faq',
+  ],
+  deletionSidebar: [
+    'DeletionID/deletionid',
+    'DeletionID/input',
     {
       type: 'category',
-      label: 'EpitopeID',
-      items: ['EpitopeID/epitopeid'],
+      label: 'Reference Database (-d)',
+      items: [
+        'DeletionID/db/structure',
+        'DeletionID/db/custom-db'
+      ]
     },
+    'DeletionID/output',
+    'DeletionID/faq',
+  ],
+  strainSidebar: [
+    'StrainID/strainid',
+    'StrainID/input',
+    'StrainID/genome',
     {
       type: 'category',
-      label: 'DeletionID',
-      items: ['DeletionID/deletionid'],
+      label: 'Reference Database (-v)',
+      items: [
+        'StrainID/db/structure',
+        'StrainID/db/pregenerated',
+        'StrainID/db/custom-db'
+      ]
     },
-    {
-      type: 'category',
-      label: 'StrainID',
-      items: ['StrainID/strainid'],
-    },
+    'StrainID/output',
+    'StrainID/faq',
+    'StrainID/example-runs',
   ],
 };
 
