@@ -10,14 +10,14 @@ __EpitopeID identifies and determines the genomic location of epitopes or other 
 
 ![Figure1A](/genopipe-img/figure1a.png)
 
-## Usage
+
 ```bash
 bash identify-Epitope.sh -i /path/to/FASTQ -o /path/to/output -d /path/to/genome/database -t <Threads - Default 1>
 eg: bash identify-Epitope.sh -i /input -o /output -d /sacCer3_EpiID -t 2
 ```
 
 
-### Threading (`-t`)
+## Threading (`-t`)
 
 This optional input is used to specify the number of threads to used for the Bowtie2 alignment commands. Defaults to 1.
 

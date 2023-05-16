@@ -4,8 +4,6 @@ title: FAQ
 sidebar_label: FAQ
 ---
 
-## FAQ
-
 #### Q: My epitope sequence isn't part of the sequences in the default provided reference files (either `sacCer3_EpiID` or `hg19_EpiID`). Can I still use EpitopeID for checking my samples?
   * Yes! Please scroll up to the [**Customizing annotations**][customize-annotations] section for directions on how to add your epitope sequence to the database.
 #### Q: I added my own custom tag sequences to the `TagDB` directory but when I run EpitopeID, none of my samples are getting significant hits to the new tags.

@@ -5,7 +5,7 @@ sidebar_label: Customizing your database
 ---
 
 # Customizing your VCFs
-Adding strains is straightforward. Simply add a file in standard [Variant Call Format][vcf-specs] to the `/name/of/strain/vcf/db/` directory. The database should use the following directory structure to ensure that StrainID can find the correct reference files.
+Adding strains is straightforward. Simply add a file in standard [Variant Call Format][vcf-specs] to the `/name/of/strain/vcf/db/` directory.
 
 ```
 /name/of/strain/vcf/db

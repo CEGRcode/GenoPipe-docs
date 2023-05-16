@@ -4,7 +4,7 @@ title: ''
 sidebar_label: Input Files (-i)
 ---
 
-## Input BAM Files (`-i`)
+# Input BAM Files (`-i`)
 DeletionID takes a directory pathname for the input and will run DeletionID on all the BAM files (`*.bam`) it finds within that directory path when you execute `identify-Deletion.sh`. Make sure your files are sorted and use the standard BAM format (output of most aligner tools).
 
 ## Supported assays

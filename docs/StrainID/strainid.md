@@ -8,15 +8,13 @@ sidebar_label: Usage
 
 __StrainID compares a database of VCF files against an aligned BAM file to check for the presence of SNPs in order to determine a likely cell line/strain used in the experiment.__
 
-A report is generated that scores each input BAM with a value for each given VCF file such thataslkdjfal;skjdf alsdkjf
 
 ![Figure1C](/genopipe-img/figure1c.png)
 
-## Usage
 ```bash
 identify-Strain.sh -i /path/to/BAM -g /path/to/genome/fASTA -v /path/to/VCF/files -o /path/to/output
 ```
 
-### Dependencies
+<!-- ### Dependencies
 
-Set-up your dependencies with conda or singularity:
+Set-up your dependencies with conda or singularity: -->

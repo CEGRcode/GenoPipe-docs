@@ -46,6 +46,7 @@ const sidebars = {
       label: 'Reference Database (-d)',
       items: [
         'DeletionID/db/structure',
+        'DeletionID/db/pregenerated',
         'DeletionID/db/custom-db'
       ]
     },

@@ -1,10 +1,9 @@
 ---
 id: faq
-title: ''
+title: FAQ
 sidebar_label: FAQ
 ---
 
-## FAQs
 
 #### Q: I have run DeletionID but many genes are being returned in the output report. Are all of these genes in the list depleted from my sample?
   * First check your sequencing coverage. When it is low, DeletionID can misidentify or identify many more knockout regions than are actually present.

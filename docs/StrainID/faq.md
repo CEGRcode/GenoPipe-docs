@@ -1,10 +1,8 @@
 ---
 id: faq
-title: ''
+title: FAQ
 sidebar_label: FAQ
 ---
-
-## FAQs
 
 #### Q: What do the "NaN" or "Inf" scores mean in the StrainID output report?
   - Please check the examples with descriptions in the section describing the [output reports][read-output].

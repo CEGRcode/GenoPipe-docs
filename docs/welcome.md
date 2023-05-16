@@ -56,7 +56,7 @@ cd GenoPipe
 ## Genome Builds
 General notes about the defaults used for out-of-the-box usage:
 
-* Yeast (sacCer3) and human (hg19) genome builds supported
+* Yeast (sacCer3) and human (hg19) genome builds supported (and hg38 for StrainID)
 * Helper scripts for downloading reference genome sequence (FASTA) described in [EpitopeID guide][epitopeid-md]
   * sacCer3 genome download + scripts to rename chromosome identifiers to arabic numeral system
   * hg19 genome download
@@ -69,7 +69,7 @@ General notes about the defaults used for out-of-the-box usage:
 
 ## File Format Standards
 
-* BED Format -- used by DeletionID. See [specifications][bed-specs].
+* BED Format -- used by DeletionID and EpitopeID. See [specifications][bed-specs].
 * Variant Call Format (VCF) -- used by StrainID. See [specifications][vcf-specs].
 
 

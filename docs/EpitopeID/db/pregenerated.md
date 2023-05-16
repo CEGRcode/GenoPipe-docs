@@ -18,7 +18,7 @@ The provided database files are missing the genomic reference file for storage r
 | :--------------: | :-----------: |
 | AID |  |
 | CBP |  |
-| Extended-Tap |  |
+| Extended-Tap | Used by Rossi et al. (2021) |
 | FLAG-3x |  |
 | FRB |  |
 | GFP |  |
@@ -30,6 +30,25 @@ The provided database files are missing the genomic reference file for storage r
 | Myc-3x |  |
 | ProteinA |  |
 
+
+## hg19_EpiID
+
+| | |
+| :--------------: | :-----------: |
+| LAP-tag | Communication with Dr. Kevin White<br/>(UChicago, ENCODE) |
+
+## hg19_EpiID_v2
+
+| | |
+| :--------------: | :-----------: |
+| LAP-tag | Communication with Dr. Kevin White<br/>(UChicago, ENCODE) |
+| FKBP12-V | dTAG from Nabet et al (2018)<br/>[AddGene-91797][addgene-fkbp12v], start to stop codon |
+| 3xFLAG   | Communication with the lab of Dr. Richard Myers<br/>(Hudson Alpha, ENCODE) |
+
+
+## Downloading genome reference
+If you already have the genome, you may use that. The scripts below are provided for convenience. Just note the chromosomes use in the annotations for the blacklist files match with your genome build if you opt to use your own.
+
 ### Downloading yeast `genome.fa`
 Use the utility scripts by following the commands below to download the sacCer3 genome and format the chromosome names. The reference files are based on the arabic numeral chromosome naming system (i.e. "chr1", "chr2",..."chr16","chrM","2-micron").
 
@@ -39,15 +58,7 @@ bash download_sacCer3_Genome.sh
 mv genome.fa /path/to/sacCer3_EpiID/FASTA_genome/
 ```
 
-## hg19_EpiID_v2
-
-| | |
-| :--------------: | :-----------: |
-| LAP-tag | Communication with Dr. Kevin White (UChicago, ENCODE) |
-| FKBP12-V | dTAG from Nabet et al (2018) in [AddGene-91797][addgene-fkbp12v], start to stop codon |
-
-
-### Downloading yeast `genome.fa`
+### Downloading human `genome.fa`
 Use the utility scripts by following the commands below to download the hg19 genome and move it to the appropriate directory.
 
 ```bash
@@ -55,8 +66,5 @@ cd /path/to/GenoPipe/EpitopeID/utility_scripts/genome_data
 bash download_hg19_Genome.sh
 mv genome.fa /path/to/hg19_EpiID/FASTA_genome/genome.fa
 ```
-
->FKBP12-V	F36V variant of FKBP12
-atgggagtgcaggtggaaaccatctccccaggagacgggcgcaccttccccaagcgcggccagacctgcgtggtgcactacaccgggatgcttgaagatggaaagaaagttgattcctcccgggacagaaacaagccctttaagtttatgctaggcaagcaggaggtgatccgaggctgggaagaaggggttgcccagatgagtgtgggtcagagagccaaactgactatatctccagattatgcctatggtgccactgggcacccaggcatcatcccaccacatgccactctcgtcttcgatgtggagcttctaaaactggaa
 
 [addgene-fkbp12v]:https://www.addgene.org/browse/sequence/197293/

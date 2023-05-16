@@ -4,10 +4,10 @@ title: ''
 sidebar_label: Output Files (-o)
 ---
 
-## Output Report (`-o`)
+# Output Report (`-o`)
 If StrainID loops through a directory of `n` BAM files, there will be `n` output files written to the directory path indicated by `-o` with file reports named `XXXXXX_strain.tab`. In each output file, there is a score written for each strain VCF tested. Below are two examples of StrainID reports with descriptions of how to interpret the results.
 
-### Example 1
+## Example 1
 Below is an example StrainID output file from an "MCF-7" cell line sample ([ENCFF354LGE][ENCFF354LGE]).
 ```
 	ENCFF354LGE.bam
@@ -23,7 +23,7 @@ MCF7.vcf	2.6946153576498024
 
 For this report, the MCF-7 score relative to the scores of the other strains is much higher relative to the scores of other strains. Thus, this sample is classified by StrainID to be from a MCF-7 background.
 
-### Example 2
+## Example 2
 Below is an example StrainID output file from an "SK-N-SH" cell line sample ([ENCFF000QXV][ENCFF000QXV]).
 ```
 	ENCFF000QXV.bam
@@ -41,7 +41,7 @@ In reading these reports, look for the VCF file with the largest value as the be
 
 For this report, due to the dramatically high value of the SK-N-SH score relative to the scores of the other strains, this sample would be confidently classified as sourced from the SK-N-SH cell line.
 
-### Example 3
+## Example 3
 Sometimes in reports you may see an 'Inf' score (should be extremely rare). In these cases, the background of the dataset was not sufficiently sampled and no reads sampled included deviations from the reference genome. You may try re-running StrainID with a different seed.
 ```
 	XXXXX.bam

@@ -4,8 +4,8 @@ title: ''
 sidebar_label: Execution Examples
 ---
 
-## ENCODE sample human run (hg19_VCF)
-Download [ENCFF354LGE] and run StrainID.
+# ENCODE sample run (hg19_VCF)
+Download [ENCFF354LGE][ENCFF354LGE] and run StrainID.
 
 ```
 WRK=`pwd`
