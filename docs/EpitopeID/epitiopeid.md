@@ -2,6 +2,7 @@
 id: epitopeid
 title: Usage
 sidebar_label: Usage
+slug: /EpitopeID/
 ---
 
 <!-- ![epitopeid-icon](/genopipe-img/epitopeid-icon.png)-->

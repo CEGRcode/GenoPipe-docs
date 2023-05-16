@@ -2,6 +2,7 @@
 id: strainid
 title: Usage
 sidebar_label: Usage
+slug: /StrainID/
 ---
 
 <!-- [strainid-icon]:../static/genopipe-img/strainid-icon.png -->

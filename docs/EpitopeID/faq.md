@@ -22,8 +22,8 @@ sidebar_label: FAQ
 [ensembl-ftp]:https://useast.ensembl.org/info/data/ftp/index.html
 [ucsc-download]:https://hgdownload.soe.ucsc.edu/downloads.html
 
-[published-sra]:/docs/epitopeid#using-published-data-downloaded-from-sra
-[download-sacCer3]:/docs/epitopeid#downloading-the-saccer3-genome
-[download-hg19]:/docs/epitopeid#downloading-the-hg19-genome
-[customize-annotations]:/docs/epitopeid#customizing-annotations
-[customize-epitopes]:/docs/epitopeid#customizing-epitopes
+[published-sra]:/docs/EpitopeID/input#using-published-data-downloaded-from-sra
+[download-sacCer3]:/docs/EpitopeID/db/pregenerated#downloading-the-saccer3-genome
+[download-hg19]:/docs/EpitopeID/db/pregenerated#downloading-the-hg19-genome
+[customize-annotations]:/docs/EpitopeID/db/custom-db#customizing-annotations
+[customize-epitopes]:/docs/EpitopeID/custom-db#customizing-epitopes

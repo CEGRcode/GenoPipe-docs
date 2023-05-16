@@ -11,5 +11,5 @@ sidebar_label: FAQ
 #### Q: I have data from a human/mouse deletion that I wish to identify. Do you have a reference database for genes from the mm10 or hg19 genome assemblies?
   * DeletionID has not been benchmarked against samples from human or other organisms with large genomes. Please see the [caution note][supported-genomes] above for more information.
 
-[supported-assays]:/docs/deletionid#supported-assays
-[supported-genomes]:/docs/deletionid#supported-genomes
+[supported-assays]:/docs/DeletionID/input#supported-assays
+[supported-genomes]:/docs/DeletionID/input#supported-genomes

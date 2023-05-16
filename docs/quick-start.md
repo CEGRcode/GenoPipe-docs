@@ -185,6 +185,6 @@ bash identify-Strain.sh -i /User/joeschmoe/Desktop/mybam -o /User/joeschmoe/Desk
 ```
 
 [dependencies]:/docs/welcome#dependencies
-[epitopeid]:/docs/epitopeid
-[deletionid]:/docs/deletionid
-[strainid]:/docs/strainid
+[epitopeid-md]:/docs/EpitopeID/epitopeid
+[deletionid-md]:/docs/DeletionID/
+[strainid-md]:/docs/StrainID

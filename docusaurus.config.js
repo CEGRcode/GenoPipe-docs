@@ -104,15 +104,15 @@ const config = {
             items: [
               {
                 label: 'EpitopeID',
-                to: '/docs/EpitopeID/epitopeid',
+                to: '/docs/EpitopeID/',
               },
               {
                 label: 'DeletionID',
-                to: '/docs/DeletionID/deletionid',
+                to: '/docs/DeletionID/',
               },
               {
                 label: 'StrainID',
-                to: '/docs/StrainID/strainid',
+                to: '/docs/StrainID/',
               },
             ],
           },

@@ -87,9 +87,9 @@ If you use GenoPipe in your work, you can use the [BioRxiv publication (Lang et 
 
 [biorxiv-link]:https://www.biorxiv.org/content/10.1101/2023.03.14.532660v1
 
-[epitopeid-md]:/docs/epitopeid
-[deletionid-md]:/docs/deletionid
-[strainid-md]:/docs/strainid
+[epitopeid-md]:/docs/EpitopeID/
+[deletionid-md]:/docs/DeletionID/
+[strainid-md]:/docs/StrainID
 
 [github-repo]:https://github.com/CEGRcode/GenoPipe
 [github-issues]:https://github.com/CEGRcode/GenoPipe/issues

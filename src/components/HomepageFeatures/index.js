@@ -13,7 +13,7 @@ const FeatureList = [
         DNA.
       </>
     ),
-    link: "docs/epitopeid",
+    link: "docs/EpitopeID/",
   },
   {
     title: "DeletionID",
@@ -23,7 +23,7 @@ const FeatureList = [
         Check your BAM files for regions with significant depletions of reads.
       </>
     ),
-    link: "docs/deletionid",
+    link: "docs/DeletionID/",
   },
   {
     title: "StrainID",
@@ -34,7 +34,7 @@ const FeatureList = [
         closely resembles.
       </>
     ),
-    link: "docs/strainid",
+    link: "docs/StrainID/",
   },
 ];
 
