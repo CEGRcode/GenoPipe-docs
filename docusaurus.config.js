@@ -34,9 +34,11 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
           // Please change this to your repo.
           // Remove this to remove the 'edit this page' links.
-          editUrl: 'https://github.com/CEGRcode/GenoPipe-docs',
+//          editUrl: 'https://github.com/CEGRcode/GenoPipe-docs',
         },
 //        blog: {
 //          showReadingTime: true,
@@ -55,7 +57,6 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'GenoPipe',
         logo: {
           alt: 'GenoPipe Logo',
           src: 'img/genopipe.png',
