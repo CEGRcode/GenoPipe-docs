@@ -1,11 +1,17 @@
-<svg width="125" height="104" viewBox="0 0 125 104" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M42.2932 78.9474H0V103.383H42.2932V78.9474Z" fill="#30518E"/>
-<path d="M42.2932 39.4736H0V63.9097H42.2932V39.4736Z" fill="#30518E"/>
-<path d="M42.2932 0H0V24.4361H42.2932V0Z" fill="#30518E"/>
-<path d="M125 78.9474H77.0676V103.383H125V78.9474Z" fill="#30518E"/>
-<path d="M125 39.4736H50.752V63.9097H125V39.4736Z" fill="#30518E"/>
-<path d="M125 0H39.4736V24.4361H125V0Z" fill="#30518E"/>
-<path d="M77.0677 78.9474H42.2932V103.383H77.0677V78.9474Z" fill="#FDD9D9"/>
-<path d="M50.752 39.4736H15.9775V63.9097H50.752V39.4736Z" fill="#FECCCD"/>
-<path d="M93.9849 0H59.2104V24.4361H93.9849V0Z" fill="#F3B6B5"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.4.6, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 125 104" style="enable-background:new 0 0 125 104;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#0980AF;}
+	.st1{fill:#FDD9D9;}
+	.st2{fill:#FECCCD;}
+	.st3{fill:#F3B6B5;}
+</style>
+<path class="st0" d="M125,78.9H0v24.4h125V78.9z"/>
+<path class="st0" d="M125,39.5H0v24.4h125V39.5z"/>
+<path class="st0" d="M125,0H0v24.4h125V0z"/>
+<path class="st1" d="M77.1,78.9H42.3v24.4h34.8V78.9z"/>
+<path class="st2" d="M50.8,39.5H16v24.4h34.8V39.5z"/>
+<path class="st3" d="M94,0H59.2v24.4H94V0z"/>
 </svg>
