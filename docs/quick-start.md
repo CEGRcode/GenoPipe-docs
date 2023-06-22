@@ -236,7 +236,7 @@ wget -c https://www.encodeproject.org/files/ENCFF492NHB/@@download/ENCFF492NHB.b
 wget -c https://www.encodeproject.org/files/ENCFF745DNT/@@download/ENCFF745DNT.bam -O hg19_BAM/ENCFF745DNT.bam
 ```
 
-[epitopeid-md]:/docs/EpitopeID/epitopeid
+[epitopeid-md]:/docs/EpitopeID/
 [deletionid-md]:/docs/DeletionID/
 [strainid-md]:/docs/StrainID
 [epitopeid-dependencies]:/docs/EpitopeID/#dependencies

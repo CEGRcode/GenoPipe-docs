@@ -16,16 +16,6 @@ const FeatureList = [
     link: "docs/EpitopeID/",
   },
   {
-    title: "DeletionID",
-    Svg: require("@site/static/genopipe-img/DeletionID_icon.svg").default,
-    description: (
-      <>
-        Check your BAM files for regions with significant depletions of reads.
-      </>
-    ),
-    link: "docs/DeletionID/",
-  },
-  {
     title: "StrainID",
     Svg: require("@site/static/genopipe-img/StrainID_icon.svg").default,
     description: (
@@ -35,6 +25,16 @@ const FeatureList = [
       </>
     ),
     link: "docs/StrainID/",
+  },
+  {
+    title: "DeletionID",
+    Svg: require("@site/static/genopipe-img/DeletionID_icon.svg").default,
+    description: (
+      <>
+        Check your BAM files for regions with significant depletions of reads.
+      </>
+    ),
+    link: "docs/DeletionID/",
   },
 ];
 
