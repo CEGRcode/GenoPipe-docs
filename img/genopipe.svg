@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.3.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1584 1224" style="enable-background:new 0 0 1584 1224;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;}
+	.st1{fill:#0980AF;}
+	.st2{fill:#FEC619;}
+	.st3{fill:#F3B6B5;}
+	.st4{fill:none;}
+	.st5{font-family:'CourierNewPS-BoldMT';}
+	.st6{font-size:74px;}
+	.st7{letter-spacing:10;}
+</style>
+<g id="图层_1" class="st0">
+	
+		<image style="display:inline;overflow:visible;" width="564" height="562" xlink:href="E341209CA255334A.jpg"  transform="matrix(1 0 0 1 492.1884 339.5217)">
+	</image>
+</g>
+<g id="图层_2">
+	<rect x="553.5" y="657.5" class="st1" width="435.7" height="84.2"/>
+	<rect x="612" y="657.5" class="st2" width="21.3" height="84.2"/>
+	<rect x="665.6" y="657.5" class="st2" width="21.3" height="84.2"/>
+	<rect x="889.9" y="657.5" class="st2" width="21.3" height="84.2"/>
+	<g>
+		<polygon class="st1" points="721.4,612.5 553.5,612.5 553.5,528.8 782.7,528.8 		"/>
+		<polygon class="st1" points="826.6,528.8 989.2,528.8 989.2,612.5 767.3,612.5 		"/>
+	</g>
+	<rect x="553.5" y="407.4" class="st1" width="435.7" height="76.3"/>
+	<rect x="699.6" y="407.4" class="st3" width="123.6" height="76.3"/>
+</g>
+<g id="图层_3">
+	<rect x="553.5" y="786.7" class="st4" width="435.7" height="71.7"/>
+	<text transform="matrix(1 0 0 1.2 555.9274 845.6445)" class="st1 st5 st6 st7">GenoPipe</text>
+</g>
+</svg>
