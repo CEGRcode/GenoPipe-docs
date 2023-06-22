@@ -4,24 +4,102 @@ title: Quick Start
 sidebar_label: Quick Start
 ---
 
-These are quick setup instructions for running each of the GenoPipe modules out-of-the-box using the provided sacCer3 and hg19 reference files. For more details on customizations or reading reports, check out the module-specific pages ([EpitopeID][epitopeid], [DeletionID][deletionid], and [StrainID][strainid])
+These are quick setup instructions for running each of the GenoPipe modules "out-of-the-box" using the provided pre-generated sacCer3 and hg19 reference files. For more details on customizations or reading reports, check out the module-specific pages ([EpitopeID][epitopeid-md], [DeletionID][deletionid-md], and [StrainID][strainid-md])
 
-## Set-up instructions (all modules)
-To download GenoPipe, you can clone the repository. No builds needed.
-```
-git clone www.github/CEGRcode/GenoPipe
-WRK=`pwd`  # Save current working directory path to env variable
-```
-Make sure all [dependencies are installed][dependencies].
+## Download & Dependencies
 
-### Joe Schmoe Example
+To download GenoPipe, you can clone the repository or directly download the code. No builds needed.
 ```
 # Download GenoPipe
-cd /User/joeschmoe/Desktop/
-git clone GenoPipe
+cd /User/joeschmoe/Desktop
+git clone https://github.com/CEGRcode/GenoPipe.git
 ```
 
-The final directory structure after running all of the Joe Schmoe examples below should look something like this:
+Make sure all **dependencies** are installed by referenceing each module's dependency guide:
+- [EpitopeID dependencies][epitopeid-dependencies]
+- [StrainID dependencies][strainid-dependencies]
+- [DeletionID dependencies][deletionid-dependencies]
+
+You could create a conda environment of all the dependencies together:
+```
+conda create -n genopipe-env -c bioconda -c conda-forge bedtools bowtie2 bwa perl numpy scipy pysam wget samtools
+```
+
+## ENCODE example (human)
+
+Say we performed some K562 ChIP-seq for an eGFP epitope-tagged strain and we want to validate that the cell line background is K562 (StrainID) and that the epitope correctly targeted the DDX20 gene (EpitopeID). For this exercise, we will be pulling data files from the ENCODE experiment [ENCSR978IXJ][ENCSR978IXJ] including the raw FASTQ files and the BAM files downstream in the processing pipeline.
+
+### Get data & set-up GenoPipe
+For this example, we are working from the `/User/joeschmoe/Desktop` directory on some Linux/MacOS machine. Run the following code to set-up your input/output directories and download data from ENCODE.
+
+```
+# Make input directories
+[ -d hg19_FASTQ ] || mkdir hg19_FASTQ
+[ -d hg19_BAM ] || mkdir hg19_BAM
+
+# Download hg19 eGFP tagged strain test files
+wget -c https://www.encodeproject.org/files/ENCFF467ZVS/@@download/ENCFF467ZVS.fastq.gz -O hg19_FASTQ/ENCSR978IXJ_R1.fastq.gz
+wget -c https://www.encodeproject.org/files/ENCFF969JRS/@@download/ENCFF969JRS.fastq.gz -O hg19_FASTQ/ENCSR978IXJ_R2.fastq.gz
+
+# Download hg19 ENCODE-CellLines test files
+wget -c https://www.encodeproject.org/files/ENCFF548ERH/@@download/ENCFF548ERH.bam -O hg19_BAM/ENCSR978IXJ.bam
+
+# Make output directories
+[ -d hg19_epitopeid_reports ] || mkdir hg19_epitopeid_reports
+[ -d hg19_strainid_reports ] || mkdir hg19_strainid_reports
+
+# Download hg19 genome & move it to EpiID db directory
+cd GenoPipe/EpitopeID/utility_scripts/genome_data
+bash download_hg19_Genome.sh
+mv genome.fa* ../../hg19_EpiID/FASTA_genome/
+```
+
+### Run EpitopeID
+Execute the shell script to run EpitopeID - make sure to use absolute paths
+```
+cd /User/joeschmoe/Desktop/GenoPipe/EpitopeID
+bash identify-Epitope.sh -t 4 \
+  -i /User/joeschmoe/Desktop/hg19_FASTQ \
+  -d /User/joeschmoe/Desktop/GenoPipe/EpitopeID/hg19_EpiID \
+  -o /User/joeschmoe/Desktop/hg19_epitopeid_reports
+```
+
+Your output should look something like this
+```
+EpitopeID	EpitopeCount
+LAP-tag 48
+
+GeneID	EpitopeID	EpitopeLocation	EpitopeCount	pVal
+DDX20|chr1:112298190-112310199	LAP-tag	C-term	5	5.582970412927705e-20
+```
+
+### Run StrainID
+Execute the shell script to run StrainID - make sure to use absolute paths
+```
+cd /User/joeschmoe/Desktop/GenoPipe/StrainID
+bash identify-Strain.sh \
+  -i /User/joeschmoe/Desktop/hg19_BAM \
+  -g /User/joeschmoe/Desktop/GenoPipe/EpitopeID/hg19_EpiID/FASTA_genome/genome.fa \
+  -v /User/joeschmoe/Desktop/GenoPipe/StrainID/hg19_VCF \
+  -o /User/joeschmoe/Desktop/hg19_strainid_reports \
+```
+
+Your output should look something like this
+```
+	ENCFF548ERH.bam
+A549.vcf	-3.231404275463283
+HCT116.vcf	-2.1269379376931563
+HELA.vcf	0.10841794080447699
+HepG2.vcf	-0.5427718460680672
+K562.vcf	5.683476830951074
+LnCap.vcf	-2.342453230210475
+MCF7.vcf	NaN
+SKnSH.vcf	-1.481786644732225
+```
+
+### Final Directory Structure
+
+Your directory structure after running the above should look like:
 ```
 /User/joeschmoe/Desktop
   |--GenoPipe
@@ -31,160 +109,143 @@ The final directory structure after running all of the Joe Schmoe examples below
   |  |  |--...
   |  |--StrainID
   |  |  |--...
-  |  |--sacCer3.fa
-  |--myfastq
-  |  |--SampleA_R1.fastq.gz
-  |  |--SampleB_R1.fastq.gz
-  |  |--SampleB_R2.fastq.gz
-  |--mybam
-  |  |--SampleA.bam
-  |  |--SampleB.bam
-  |--myreports_EID
-  |  |--SampleA_R1-ID.tab
-  |  |--SampleB_R1-ID.tab
-  |--myreports_DID
-  |  |--SampleA_deletion.tab
-  |  |--SampleB_deletion.tab
-  |--myreports_SID
-     |--SampleA_strain.tab
-     |--SampleB_strain.tab
+  |--hg19_FASTQ
+  |  |--ENCSR978IXJ_R1.fastq.gz
+  |  |--ENCSR978IXJ_R2.fastq.gz
+  |--hg19_BAM
+  |  |--ENCSR978IXJ.bam
+  |--hg19_epitopeid_reports
+  |  |--ENCSR978IXJ_R1-ID.tab
+  |--hg19_strainid_reports
+     |--ENCSR978IXJ_strain.tab
 ```
 
 
+## ChIP-exo example (yeast)
 
+Say we performed some ChIP-exo for an TAP epitope-tagged strain and we want to validate that the background is BY4741 (StrainID) and that the yeast strain was constructed from a Leu2, Ura3, and Met17 whole-gene knockout background (DeletionID). For this exercise, we will be pulling BAM data files from the [Yeast Epigenome Project][yep-url].
 
-## EpitopeID
-
-Let's say you cloned GenoPipe into your working directory where there is another directory that includes all the raw FASTQ inputs.
-
-<!-- ```
-/path/to/working/directory/
-|--myfastq
-|  |--sampleA_R1.fastq.gz
-|  |--sampleA_R2.fastq.gz
-|  |--sampleB_R1.fastq.gz
-|  |--sampleB_R2.fastq.gz
-|--myreports_EID
-   |--<empty>
-|--GenoPipe/
-   |--EpitopeID/
-      |--identify_Epitope.sh
-      |--utility_scripts/
-         |--genome_data/
-            |--download_sacCer3_Genome.sh
-            |--download_hg19_Genome.sh
-      ...
-   ...
-``` -->
-
-### 1. Check FASTQ filenames
-EpitopeID takes gzipped FASTQ files as input. The file name should end with a `_R1` or `_R2` and use the extension `fastq.gz` (the standard naming convention of Illumina libraries).
-
-### 2. Download genome
-The following instructions are for setting up the database of reference files used by EpitopeID using the provided genome builds and epitope tag sequences. To customize your database, see the [full documentation][epitopeid].
-
-For downloading yeast genome...
-```
-cd $WRK/GenoPipe/EpitopeID/utility_scripts/genome_data/
-bash download_sacCer3_Genome.sh
-mv genome.fa ../../sacCer3_EpiID/FASTA_genome/
-```
-
-For downloading human genome...
-```
-cd $WRK/GenoPipe/EpitopeID/utility_scripts/genome_data/
-bash download_hg19_Genome.sh
-mv genome.fa ../../sacCer3_EpiID/FASTA_genome/
-```
-
-### 3. Run EpitopeID
-When providing path locations, it is important that you provide **absolute paths** (i.e. path should start with `/` or `~/`).
-
-For yeast (sacCer3) samples...
-```
-cd GenoPipe/EpitopeID
-bash identify-Epitope.sh -i /path/to/FASTQ -o /path/to/output -d /path/to/GenoPipe/EpitopeID/sacCer3_EpiID
-```
-
-For human (hg19) samples...
-```
-cd GenoPipe/EpitopeID
-bash identify-Epitope.sh -i /path/to/FASTQ -o /path/to/output -d /path/to/GenoPipe/EpitopeID/hg19_EpiID
-```
-
-### Joe Schmoe Example
-
-In the following example, GenoPipe, the directory including all the input yeast FASTQ files, and the new directory for storing EpitopeID reports are stored on the Desktop of Joe Schmoe. Filepaths would need to be changed according to a user's preferred directory structure.
+### Get data & set-up GenoPipe
+For this example, we are working from the `/User/joeschmoe/Desktop` directory on some Linux/MacOS machine. Run the following code to set-up your input/output directories and download data from ENCODE.
 
 ```
-# Download Genomic FASTA and move to appropriate directory
-cd /User/joeschmoe/Desktop/GenoPipe/EpitopeID/utility_scripts/genome_data/
+# Make input directories
+[ -d sacCer3_BAM ] || mkdir sacCer3_BAM
+
+# Download sacCer3 BAM files from The Yeast Epigenome Project
+wget -c https://www.datacommons.psu.edu/download/eberly/pughlab/yeast-epigenome-project/12467_YEP.zip
+unzip 12467_YEP.zip
+mv 12467_YEP/12467_filtered.bam sacCer3_BAM/12467_Reb1_i5006_BY4741_-_YPD_-_XO_FilteredBAM.bam
+
+# Make output directories
+[ -d sacCer3_strainid_reports ] || mkdir sacCer3_strainid_reports
+[ -d sacCer3_deletionid_reports ] || mkdir sacCer3_deletionid_reports
+
+# Download sacCer3 genome & move it to EpiID db directory
+cd GenoPipe/EpitopeID/utility_scripts/genome_data
 bash download_sacCer3_Genome.sh
 mv genome.fa* ../../sacCer3_EpiID/FASTA_genome/
-cd ../../
-mkdir ../../myreports_EID
-# Run EpitopeID
-bash identify-Epitope.sh -i /User/joeschmoe/Desktop/myfastq -o /User/joeschmoe/Desktop/myreports_EID -d /User/joeschmoe/Desktop/GenoPipe/EpitopeID/sacCer3_EpiID
 ```
 
-
-## DeletionID
-
-### 1. Align FASTQ input files
-DeletionID uses BAM files as its input. Make sure that the reads are aligned to sacCer3 if you are using the default interval database. Any aligner that outputs standard BAM format can be used to generate the BAM input. DeletionID was tested on BAM files built using [BWA-MEM](http://bio-bwa.sourceforge.net/bwa.shtml).
-
-### 2. Run DeletionID
-For yeast (sacCer3) samples...
+### Run StrainID
+Execute the shell script to run StrainID - make sure to use absolute paths
 ```
-cd GenoPipe/DeletionID
-bash identify-Deletion.sh -i /path/to/BAM -o /path/to/output -d /path/to/GenoPipe/DeletionID/sacCer3_Del
+cd /User/joeschmoe/Desktop/GenoPipe/StrainID
+bash identify-Strain.sh \
+  -i /User/joeschmoe/Desktop/sacCer3_BAM \
+  -g /User/joeschmoe/Desktop/GenoPipe/EpitopeID/sacCer3_EpiID/FASTA_genome/genome.fa \
+  -v /User/joeschmoe/Desktop/GenoPipe/StrainID/sacCer3_VCF \
+  -o /User/joeschmoe/Desktop/sacCer3_strainid_reports \
 ```
 
-### Joe Schmoe Example
-In the following example, GenoPipe, the directory including all the input yeast BAM files, and the new directory for storing DeletionID reports are stored on the Desktop of Joe Schmoe. Filepaths would need to be changed according to a user's preferred directory structure.
+Your output should look something like this:
+```
+	12467_Reb1_i5006_BY4741_-_YPD_-_XO_FilteredBAM.bam
+BY4741.gatk.vcf	3.740238715171018
+BY4742.gatk.vcf	1.0276164735202507
+CEN.PK2-1Ca.gatk.vcf	-1.5516470878685054
+D273-10B.gatk.vcf	-1.596023423608337
+FL100.gatk.vcf	-0.05547786250012817
+JK9-3d.gatk.vcf	-1.2626920465354035
+RM11-1A.gatk.vcf	-1.5472519963103177
+SEY6210.gatk.vcf	1.233358965759852
+Sigma1278b-10560-6B.gatk.vcf	-1.5683632971271528
+W303.gatk.vcf	-0.8350038260150588
+Y55.gatk.vcf	-2.254742786500095
+
+```
+
+### Run DeletionID
 
 ```
 cd /User/joeschmoe/Desktop/GenoPipe/DeletionID
-mkdir ../../myreports_DID
-# Run DeletionID
-bash identify-Deletion.sh -i /User/joeschmoe/Desktop/mybam -o /User/joeschmoe/Desktop/myreports_DID -d /User/joeschmoe/Desktop/GenoPipe/DeletionID/sacCer3_Del
+bash identify-Deletion.sh \
+  -i /User/joeschmoe/Desktop/sacCer3_BAM \
+  -d /User/joeschmoe/Desktop/GenoPipe/DeletionID/sacCer3_Del \
+  -o /User/joeschmoe/Desktop/sacCer3_deletionid_reports
 ```
 
-## StrainID
-
-### 1. Align FASTQ input files
-StrainID uses BAM files as its input. Make sure that the reads are aligned to the appropriate sacCer3 or hg19 genome build if you are using the default interval database. Any aligner that outputs standard BAM format can be used to generate the BAM input. StrainID was tested on [BWA-MEM](http://bio-bwa.sourceforge.net/bwa.shtml).
-
-### 2. Run StrainID
-For yeast (sacCer3) samples...
-
+Your output should look something like this:
 ```
-cd GenoPipe/StrainID
-bash identify-Strain.sh -i /path/to/BAM -o /path/to/output -g /path/to/sacCer3.fa -v /path/to/GenoPipe/StrainID/sacCer3_VCF
+LEU2	No Data Detected
+URA3	No Data Detected
+MET17	No Data Detected
 ```
 
-For human (hg19) samples...
+### Final Directory Structure
+
+Your directory structure after running the above should look like:
+```
+/User/joeschmoe/Desktop
+  |--GenoPipe
+  |  |--EpitopeID
+  |  |  |--...
+  |  |--DeletionID
+  |  |  |--...
+  |  |--StrainID
+  |  |  |--...
+  |--sacCer3_BAM
+  |  |--12467_Reb1_i5006_BY4741_-_YPD_-_XO_FilteredBAM.bam
+  |--sacCer3_strainid_reports
+  | |--12467_Reb1_i5006_BY4741_-_YPD_-_XO_FilteredBAM_strain.tab
+  |--sacCer3_deletionid_reports
+    |--12467_Reb1_i5006_BY4741_-_YPD_-_XO_FilteredBAM_deletion.tab
+```
+
+
+## More examples
+
+To demonstrate the utility of EpitopeID in another practice exercise, you can try re-running EpitopeID after downloading the following FASTQ files. What do the reports suggest about these two samples from [ENCSR130PDE][ENCSR130PDE] and [ENCSR005NMT][ENCSR005NMT]?
+```
+# ENCODE's NR4A1-eGFP ChIP-seq
+wget -c https://www.encodeproject.org/files/ENCFF671VDI/@@download/ENCFF671VDI.fastq.gz -O hg19_FASTQ/ENCFF671VDI_R1.fastq.gz
+wget -c https://www.encodeproject.org/files/ENCFF301GRJ/@@download/ENCFF301GRJ.fastq.gz -O hg19_FASTQ/ENCFF671VDI_R2.fastq.gz
+
+# ENCODE's ID3-eGFP ChIP-seq
+wget -c https://www.encodeproject.org/files/ENCFF548RTA/@@download/ENCFF548RTA.fastq.gz -O hg19_FASTQ/ENCFF548RTA_R1.fastq.gz
+wget -c https://www.encodeproject.org/files/ENCFF916QKA/@@download/ENCFF916QKA.fastq.gz -O hg19_FASTQ/ENCFF548RTA_R2.fastq.gz
+```
+
+To demonstrate the utility of StrainID in another practice exercise, you can try re-running StrainID after downloading the following BAM files. What do the reports suggest about these two samples that may have been generated in the same batch (from [ENCSR210RWL][ENCSR210RWL] and [ENCSR927XBT][ENCSR927XBT])?
 
 ```
-cd GenoPipe/StrainID
-bash identify-Strain.sh -i /path/to/BAM -o /path/to/output -g /path/to/hg19.fa -v /path/to/GenoPipe/StrainID/hg19_VCF
+# Two of ENCODE's shRNA knockdown RNA-seq datasets, both processed on 2016-04-14
+# HepG2
+wget -c https://www.encodeproject.org/files/ENCFF492NHB/@@download/ENCFF492NHB.bam -O hg19_BAM/ENCFF492NHB.bam
+# K562
+wget -c https://www.encodeproject.org/files/ENCFF745DNT/@@download/ENCFF745DNT.bam -O hg19_BAM/ENCFF745DNT.bam
 ```
 
-### Joe Schmoe Example
-In the following example, GenoPipe, the directory including all the input yeast BAM files, and the new directory for storing DeletionID reports are stored on the Desktop of Joe Schmoe. Filepaths would need to be changed according to a user's preferred directory structure.
-
-```
-cd /User/joeschmoe/Desktop/GenoPipe/
-cd EpitopeID/utility_scripts/genome_data
-bash download_sacCer3_Genome.sh
-mv genome.fa /User/joeschmoe/Desktop/GenoPipe/sacCer3.fa
-cd ../../../StrainID
-mkdir ../../myreports_SID
-# Run StrainID
-bash identify-Strain.sh -i /User/joeschmoe/Desktop/mybam -o /User/joeschmoe/Desktop/myreports_SID -g /User/joeschmoe/Desktop/GenoPipe/sacCer3.fa -v /User/joeschmoe/Desktop/GenoPipe/StrainID/sacCer3_VCF
-```
-
-[dependencies]:/docs/welcome#dependencies
 [epitopeid-md]:/docs/EpitopeID/epitopeid
 [deletionid-md]:/docs/DeletionID/
 [strainid-md]:/docs/StrainID
+[epitopeid-dependencies]:/docs/EpitopeID/#dependencies
+[strainid-dependencies]:/docs/StrainID/#dependencies
+[deletionid-dependencies]:/docs/DeletionID/#dependencies
+
+[ENCSR978IXJ]:https://www.encodeproject.org/experiments/ENCSR978IXJ/
+[ENCSR130PDE]:https://www.encodeproject.org/experiments/ENCSR130PDE/
+[ENCSR005NMT]:https://www.encodeproject.org/experiments/ENCSR005NMT/
+[ENCSR210RWL]:https://www.encodeproject.org/experiments/ENCSR210RWL/
+[ENCSR927XBT]:https://www.encodeproject.org/experiments/ENCSR927XBT/
+[yep-url]:http://www.yeastepigenome.org/

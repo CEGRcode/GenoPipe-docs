@@ -68,7 +68,6 @@ const sidebars = {
     },
     'StrainID/output',
     'StrainID/faq',
-    'StrainID/example-runs',
   ],
 };
 
