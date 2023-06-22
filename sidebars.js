@@ -36,6 +36,8 @@ const sidebars = {
       ]
     },
     'EpitopeID/output',
+    'EpitopeID/performance',
+    'EpitopeID/threshold',
     'EpitopeID/faq',
   ],
   deletionSidebar: [
@@ -67,6 +69,7 @@ const sidebars = {
       ]
     },
     'StrainID/output',
+    'StrainID/seed',
     'StrainID/faq',
   ],
 };

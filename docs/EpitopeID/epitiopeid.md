@@ -20,11 +20,6 @@ bash identify-Epitope.sh -i /path/to/FASTQ -o /path/to/output -d /path/to/genome
 eg: bash identify-Epitope.sh -i /input -o /output -d /sacCer3_EpiID -t 2 -p 0.1
 ```
 
-## Threading (`-t`)
-
-This optional input is used to specify the number of threads to used for the Bowtie2 alignment commands. Defaults to 1.
-
-
 ### Dependencies
 The following dependencies are needed to run EptiopeID.
 * [Bedtools v2.26+][dependency-bedtools]
