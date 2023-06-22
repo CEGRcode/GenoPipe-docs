@@ -16,7 +16,10 @@ GenoPipe is a tool with three modules that check for different aspects of strain
 This is a great QC tool for your data fresh off the sequencer or for checking old published datasets when you can't find a record of the strain background used. These modules work for data from a variety of genomic sequencing assays, not just whole-genome sequencing (WGS) and can be customized to organisms other than yeast and human. Please check the docs and FAQs of the module you're interested in before starting. Confirm that your dataset and reference files are appropriate to use with the module.
 
 
-# Genome Builds
+## System Requirements
+Each GenoPipe module can run on **Linux**/**MacOS** systems. More available CPUs can allow the user to use the parallelization features for faster runtimes.
+
+## Genome Builds
 Yeast (sacCer3) and human (hg19, hg38) genome builds supported across various modules "out-of-the-box"
 
 Helper scripts for downloading reference genome sequence (FASTA) described in [EpitopeID guide][epitopeid-md]

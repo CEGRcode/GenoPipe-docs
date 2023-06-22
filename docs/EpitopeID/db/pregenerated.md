@@ -12,9 +12,9 @@ For EpitopeID, this is the "database" or directory with four types of reference 
 The provided database files are missing the genomic reference file for storage reasons. You will need to follow the directions below to download `genome.fa` before running EpitopeID if you are planning to use the provided defaults.
 :::
 
-## sacCer3_EpiID
+### sacCer3_EpiID
 
-| sacCer3(yeast) |  |
+| Epitope | Notes |
 | :--------------: | :-----------: |
 | AID |  |
 | CBP |  |
@@ -31,19 +31,20 @@ The provided database files are missing the genomic reference file for storage r
 | ProteinA |  |
 
 
-## hg19_EpiID
+### hg19_EpiID
 
-| | |
+| Epitope | Notes |
 | :--------------: | :-----------: |
 | LAP-tag | Communication with Dr. Kevin White<br/>(UChicago, ENCODE) |
 
-## hg19_EpiID_v2
+### hg19_EpiID_v2
 
-| | |
+| Epitope | Notes |
 | :--------------: | :-----------: |
 | LAP-tag | Communication with Dr. Kevin White<br/>(UChicago, ENCODE) |
 | FKBP12-V | dTAG from Nabet et al (2018)<br/>[AddGene-91797][addgene-fkbp12v], start to stop codon |
 | 3xFLAG   | Communication with the lab of Dr. Richard Myers<br/>(Hudson Alpha, ENCODE) |
+| HaloTag |  |
 
 
 ## Downloading genome reference
