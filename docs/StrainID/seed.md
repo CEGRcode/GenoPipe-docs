@@ -1,10 +1,10 @@
 ---
 id: seed
 title: ''
-sidebar_label: Set Random Seeed (-s)
+sidebar_label: Set Random Seed (-s)
 ---
 
-## Set Random Seeed (`-s`)
+## Set Random Seed (`-s`)
 
 This option allows the user to set a random seed for reproducible random results.
 
