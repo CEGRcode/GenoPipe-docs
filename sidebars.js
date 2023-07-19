@@ -29,8 +29,8 @@ const sidebars = {
     {
       type: 'category',
       label: 'Reference Database (-d)',
+      link: {type: 'doc', id: "EpitopeID/db/structure"},
       items: [
-        'EpitopeID/db/structure',
         'EpitopeID/db/pregenerated',
         'EpitopeID/db/custom-db'
       ]
@@ -46,8 +46,8 @@ const sidebars = {
     {
       type: 'category',
       label: 'Reference Database (-d)',
+      link: {type: 'doc', id: "DeletionID/db/structure"},
       items: [
-        'DeletionID/db/structure',
         'DeletionID/db/pregenerated',
         'DeletionID/db/custom-db'
       ]
@@ -62,8 +62,8 @@ const sidebars = {
     {
       type: 'category',
       label: 'Reference Database (-v)',
+      link: {type: 'doc', id: "StrainID/db/structure"},
       items: [
-        'StrainID/db/structure',
         'StrainID/db/pregenerated',
         'StrainID/db/custom-db'
       ]
