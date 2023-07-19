@@ -5,7 +5,8 @@ sidebar_label: Welcome
 ---
 Welcome to the GenoPipe wiki!
 
-<img src={require('/../static/genopipe-img/Figure1.png').default} style={{padding:'5% 20% 5%'}} />
+<img src={require('/../static/genopipe-img/GraphicalAbstract.png').default} style={{padding:'5% 10% 5%'}}/>
+
 
 
 GenoPipe is a tool with three modules that check for different aspects of strain background in Next Generation Sequencing(NGS) datasets. Each module tests for a different aspect of strain background: epitope insertions, deletions, and cell line/variant-based background.
