@@ -4,7 +4,9 @@ title: ''
 sidebar_label: Customizing your database
 ---
 
-## How to add custom coordinate BED file
+## Customizing your database
+
+### How to add custom coordinate BED file
 
 For custom coordinates, add your BED-formatted genomic intervals for your expected deletions to `/name/of/delDB/genomic_coord/coord.bed` file. In order to make sure DeletionID calculates an appropriate background score, the `coord.bed` file should also contain a set of other "background" intervals of similar features or random coordinates. A handful of coordinates is not sufficient to calculate a robust background calculation so make sure you sample a good number of intervals to create the reference file.
 
@@ -19,7 +21,7 @@ Highly repetitive regions of the genome have very low mappability scores and are
 :::
 
 
-## How to generate a new mappability reference file
+### How to generate a new mappability reference file
 
 For each set of coordinates, a companion mappability file must be generated for DeletionID. The following code shows how to generate this reference file using the coordinate interval file and the genome FASTA that the coordinates are based on.
 

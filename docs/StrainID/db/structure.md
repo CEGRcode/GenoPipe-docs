@@ -1,10 +1,10 @@
 ---
 id: structure
 title: ''
-sidebar_label: Structure (VCF_DB)
+sidebar_label: Reference Database (-v)
 ---
 
-# Structure (VCF_DB)
+# Reference Database (`-v`)
 For StrainID, this is the "database" or directory with all the VCFs used by `identify-Strain.sh`. You will notice that StrainID [provides reference files][pregenerated] for both yeast and human so you can quickly get started without building up the database from scratch. However, you are free to [customize the database][custom-db] by adding your own VCF files.
 
 ```

@@ -4,7 +4,7 @@ title: ''
 sidebar_label: Threshold (-p)
 ---
 
-## Threshold (-p)
+# Threshold (-p)
 
 This optional input is used to specify the threshold for a localization hit to be included in the report. Defaults to 0.05.
 

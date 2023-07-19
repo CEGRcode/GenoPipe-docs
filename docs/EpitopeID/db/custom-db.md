@@ -4,7 +4,9 @@ title: ''
 sidebar_label: Customizing your database
 ---
 
-## Customizing epitopes
+## Customizing your database
+
+### Customizing epitopes
 
 If you choose to add or remove epitope tags to your database, you must add/remove the files with the sequences in FASTA format to/from `FASTA_tag/TagDB` and recreate the `FASTA_tag/ALL_TAG.fa` file so it includes the tag sequences you want. The following commands show you how to copy `my-custom-tag.fa` into the database and remake the file using the provided scripts.
 
@@ -16,7 +18,7 @@ bash /path/to/GenoPipe/EpitopeID/utility_scripts/update_TagDB.sh
 mv ALL_TAG.fa* /path/to/hg19_EpiID/FASTA_tag/
 ```
 
-## Customizing annotations
+### Customizing annotations
 GenoPipe provides the utility scripts for recreating the precomputed reference annotation files. The scripts download (yeast and human) annotations and for format gene annotation files to the EpitopeID format by tiling the genome around and including gene intervals.
 
 The precomputed files should work for most (yeast and human) use cases but if you need to compute these reference files yourself, use the available `utility_scripts` as follows:
@@ -89,7 +91,7 @@ rm temp.gff unicorn1_BIN.gff unicorn1_BIN_temp.gff unicorn1_BIN_filter.gff unico
 
 
 
-## Customizing filter
+### Customizing filter
 
 ```bash
 # bedtools intersect -v -abam $OUTPUT/$SAMPLE/orf.bam -b $DATABASE/blacklist_filter/blacklist.bed > $OUTPUT/$SAMPLE/orf_filter.bam

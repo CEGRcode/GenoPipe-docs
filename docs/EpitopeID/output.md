@@ -4,11 +4,11 @@ title: ''
 sidebar_label: Output Files (-o)
 ---
 
-## Output Report (`-o`)
+# Output Report (`-o`)
 
 The output report is saved to the user-provided output directory in a file named based on the input FASTQ files (`/path/to/output/XXXXX_R1-ID.tab`).
 
-### Example 1
+## Example 1
 Below is a sample report based on the results from running EpitopeID on the [ENCFF415CJF][ENCFF415CJF] sample from ENCODE.
 
 ```

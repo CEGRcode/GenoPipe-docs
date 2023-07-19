@@ -1,10 +1,10 @@
 ---
 id: structure
 title: ''
-sidebar_label: Structure (EpiDB)
+sidebar_label: Reference Database (-d)
 ---
 
-## Structure (EpiDB)
+# Reference Database (`-d`)
 Whether you use the provided reference files or create your own, the database should use the following directory structure to ensure that EpitopeID can find the correct reference files.
 ```
 /name/of/epiDB

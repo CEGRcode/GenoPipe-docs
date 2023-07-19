@@ -4,8 +4,7 @@ title: ''
 sidebar_label: Input Files (-i)
 ---
 
-## Input (`-i`)
-
+# Input (`-i`)
 EpitopeID takes [gzipped][gzip-man] FASTQ files from single-end(SE) or paired-end(PE) datasets to run. If your FASTQ files are not already compressed, you can zip them yourself if gzip is installed:
 
 ```bash
@@ -25,7 +24,7 @@ Alternatively try:<br/>
 ✅ `SampleR13A_R1.fastq.gz`
 :::
 
-### Using published data downloaded from SRA
+## Using published data downloaded from SRA
 If you obtained data from SRA using sra-tools, the FASTQ files may have the read id printed in the FASTQ header like this:
 ```
 @SRR518875.1.1 HWUSI-EAS1634_0079_FC:4:8:3267:1026 length=36

@@ -4,7 +4,7 @@ title: ''
 sidebar_label: Customizing your database
 ---
 
-# Customizing your VCFs
+## Customizing your VCFs
 Adding strains is straightforward. Simply add a file in standard [Variant Call Format][vcf-specs] to the `/name/of/strain/vcf/db/` directory.
 
 ```
@@ -15,7 +15,7 @@ Adding strains is straightforward. Simply add a file in standard [Variant Call F
 |--strain4.vcf
 ```
 
-## Formatting
+### Formatting
 Make sure that at minimum, you include a header with VCF version and "contig" or chromosome info at the top. For examples, see the pregenerated **hg19_VCF** reference VCFs.
 ```
 ##fileformat=VCFv4.2
@@ -40,7 +40,7 @@ Genome build is important to note here. Make sure your VCF file is based on the 
 :::
 
 
-## Custom DepMap set (hg38)
+### Custom DepMap set (hg38)
 If you are interested in several human cell line not available in the pregenerated sets, consider using the [provided scripts][hg38-depmap] to download and formats the variants in DepMap for all cell lines in `Model.csv`. To avoid downloading the full set, you could update Model.csv to only contain the rows you are interested in. Note that Model.csv was last pulled on May 14, 2023 and new cell lines may have been added to DepMap since. [Redownload `Model.csv` to get the latest][model-csv].
 
 :::note

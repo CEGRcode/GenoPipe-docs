@@ -1,7 +1,7 @@
 ---
 id: pregenerated
 title: ''
-sidebar_label: Pregenerated database
+sidebar_label: Pregenerated databases
 ---
 
 ## Pregenerated databases
