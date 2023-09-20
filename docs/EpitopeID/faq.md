@@ -8,7 +8,7 @@ sidebar_label: FAQ
   * Yes! Please scroll up to the [**Customizing annotations**][customize-annotations] section for directions on how to add your epitope sequence to the database.
 #### Q: I added my own custom tag sequences to the `TagDB` directory but when I run EpitopeID, none of my samples are getting significant hits to the new tags.
   * There are a few things you should check before concluding that the epitope is not present in your sample:
-    1. Did you recreate the `ALL_TAG.fa` file? Open it up to make sure your sequences are there. If they aren't there, follow the commands in the [**Customizing epitopes**][customizing-epitopes] section above.
+    1. Did you recreate the `ALL_TAG.fa` file? Open it up to make sure your sequences are there. If they aren't there, follow the commands in the [**Customizing epitopes**][customize-epitopes] section above.
     2. Did you recreate the Bowtie2 index files for `ALL_TAG.fa`? Remove at least one of the Bowtie2 index files (e.g. `ALL_TAG.1.bt2`) and run EpitopeID. EpitopeID automatically recreates the index if any files are missing but it does not check that the index files match the FASTA sequence. If you modify the `ALL_TAG.fa` without recreating the BWA index files, EpitopeID will run on the old set of tag sequences.
 #### Q: What does the N-term or C-term mean in the output?
   * For each gene, three bins are created for (1) the ORF interval, (2) a bin upstream of the start codon, (3) a bin downstream of the stop codon, each of which correspond to the gene, N-terminus, or C-terminus of the peptide chain gene product. If EpitopeID is mapping more strongly to the N or C-terminus, it is likely that the epitope is tagged to that side of the endogenous peptide chain.
