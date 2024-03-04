@@ -36,8 +36,9 @@ Helper scripts for downloading reference genome sequence (FASTA) described in [E
     * Software versions and OS you ran the command on
 
 ## Citing Us
-If you use GenoPipe in your work, you can use the [BioRxiv publication (Lang et al, 2023)][biorxiv-link].
+If you use GenoPipe in your work, you can use the [NAR publication (Lang et al, 2023)][paper-link].
 
+[paper-link]:https://pubmed.ncbi.nlm.nih.gov/37933851/
 [biorxiv-link]:https://www.biorxiv.org/content/10.1101/2023.03.14.532660v1
 
 [epitopeid-md]:/docs/EpitopeID/
@@ -51,5 +52,3 @@ If you use GenoPipe in your work, you can use the [BioRxiv publication (Lang et 
 [bed-specs]:https://genome.ucsc.edu/FAQ/FAQformat.html#format1
 [vcf-specs]:https://genome.ucsc.edu/goldenPath/help/vcf.html
 
-
-<!-- [biorxiv-paper]:https://www.biorxiv.org/ -->
