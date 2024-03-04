@@ -26,4 +26,4 @@ sidebar_label: FAQ
 [download-sacCer3]:/docs/EpitopeID/db/pregenerated#downloading-the-saccer3-genome
 [download-hg19]:/docs/EpitopeID/db/pregenerated#downloading-the-hg19-genome
 [customize-annotations]:/docs/EpitopeID/db/custom-db#customizing-annotations
-[customize-epitopes]:/docs/EpitopeID/custom-db#customizing-epitopes
+[customize-epitopes]:/docs/EpitopeID/db/custom-db#customizing-epitopes
